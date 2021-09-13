@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users.views import create_user
+from restaurant.views import get_restaurants, create_restaurant, ImageViewSet
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('signup/', create_user),
+    path('restaurants', get_restaurants),
+    path('create_restaurant', create_restaurant),
+    path('upload', ImageViewSet.as_view(), name='upload'),
 ]
