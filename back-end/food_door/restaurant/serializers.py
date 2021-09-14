@@ -6,9 +6,9 @@ import django.contrib.auth.password_validation as validators
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
-        fields = ('name', 'description', 'phone', 'address', 'image')
+        fields = ('id', 'name', 'description', 'phone', 'address')
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = RestaurantImage
-        fields = ('name', 'image')
+        fields = ('id', 'name', 'image')

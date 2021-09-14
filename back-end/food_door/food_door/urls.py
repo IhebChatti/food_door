@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users.views import create_user
-from restaurant.views import get_restaurants, create_restaurant, ImageViewSet
+from users import views as  user_views
+from restaurant import views as r_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('signup/', create_user),
-    path('restaurants', get_restaurants),
-    path('create_restaurant', create_restaurant),
-    path('upload', ImageViewSet.as_view(), name='upload'),
+    path('signup/', user_views.create_user),
+    path('list_restaurants', r_views.list_restaurants),
+    path('get_restaurant', r_views.get_restaurant_by_id),
+    path('create_restaurant/', r_views.create_restaurant),
+    path('restaurant_image', r_views.ImageViewSet.as_view(), name='restaurant_image'),
+    path('delete_restaurant', r_views.delete_restaurant_by_id, name='delete_restaurant'),
 ]
