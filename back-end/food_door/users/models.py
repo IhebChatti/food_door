@@ -8,13 +8,11 @@ class User(models.Model):
     first_name      = models.CharField(max_length=254, null=False)
     last_name       = models.CharField(max_length=254, null=False)
     email           = models.EmailField(_('email address'), max_length=254, unique=True, validators=[EmailValidator])
-    username        = models.CharField(_('user email address'), max_length=254, unique=True, validators=[EmailValidator])
     password        = models.CharField(max_length=254, null=False)
     address         = models.CharField(max_length=254, null=False)
     phone           = models.CharField(max_length=100, null=True)
     is_verified     = models.BooleanField(default=False, null=True)
 
-    USERNAME_FIELD  = 'email'
     EMAIL_FIELD     = 'email'
     REQUIRED_FIELDS = []
 

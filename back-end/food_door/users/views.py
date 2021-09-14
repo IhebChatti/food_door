@@ -26,4 +26,4 @@ def create_user(request):
             user.save()
             return Response({'message': 'created'}, status=status.HTTP_201_CREATED)
     except Exception as e:
-        return Response({'error': e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
