@@ -12,7 +12,7 @@ class User(models.Model):
     password        = models.CharField(max_length=254, null=False)
     address         = models.CharField(max_length=254, null=False)
     phone           = models.CharField(max_length=100, null=True)
-    is_verified     = models.BooleanField(default=False)
+    is_verified     = models.BooleanField(default=False, null=True)
 
     USERNAME_FIELD  = 'email'
     EMAIL_FIELD     = 'email'

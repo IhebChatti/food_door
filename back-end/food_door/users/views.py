@@ -13,6 +13,7 @@ def create_user(request):
     try:
         user_data = request.data
         serialized = UserSerializer(data=user_data)
+        breakpoint()
         if serialized.is_valid():
             user = User.objects.create(
                 email=serialized.data['email'],
