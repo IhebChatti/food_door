@@ -17,7 +17,6 @@ def list_restaurants(request):
     try:
         _restaurants = Restaurant.objects.all()
         serializer = RestaurantSerializer(_restaurants, many=True)
-
         return Response(
             serializer.data,
             status=status.HTTP_200_OK
@@ -121,7 +120,6 @@ def delete_restaurant_by_id(request):
             return Response({'Fail': "Restaurant by this id does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
         restaurant.delete()
-        restaurant.save()
 
         return Response(
             {'Success': 'Restaurant deleted'},

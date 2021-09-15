@@ -3,11 +3,6 @@ from django.core.files.storage import FileSystemStorage
 
 fs = FileSystemStorage(location='/media/photos')
 
-FOOD_TYPES = (
-    ('appetizer', 'appetizer'),
-    ('entree', 'entree'),
-    ('dessert', 'dessert'),
-)
 
 class Restaurant(models.Model):
     name            = models.CharField(max_length=254, null=False)
@@ -37,12 +32,23 @@ class RestaurantImage(models.Model):
 class FoodItem(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
-    type = models.CharField(max_length=100, choices=FOOD_TYPES)
+    price = models.FloatField(max_length=100)
 
     class Meta(object):
         db_table = 'food_item'
         verbose_name = 'food_item'
         verbose_name_plural = 'food_items'
+
+
+class FoodImage(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to=nameFile, blank=True, null=True)
+    food = models.ForeignKey(FoodItem, on_delete=models.CASCADE, related_name="images")
+    
+    class Meta(object):
+        db_table = 'food_image'
+        verbose_name = 'food_image'
+        verbose_name_plural = 'food_images'
 
 class Menu(models.Model):
     restaurant = models.OneToOneField(

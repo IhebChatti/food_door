@@ -6,4 +6,4 @@ import django.contrib.auth.password_validation as validators
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'password', 'first_name', 'last_name', 'phone', 'address')
+        fields = ('id', 'email', 'password', 'first_name', 'last_name', 'phone', 'address')

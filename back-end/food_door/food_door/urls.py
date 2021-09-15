@@ -17,14 +17,32 @@ from django.contrib import admin
 from django.urls import path, include
 from users import views as  user_views
 from restaurant import views as r_views
+from products import views as food_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+    
+    ######################### User Url's #####################################
+    
     path('signup/', user_views.create_user),
+    path('list_users', user_views.list_users),
+    path('get_user', user_views.get_user_by_id),
+    path('delete_user', user_views.delete_user_by_id),
+    
+    ######################### Restaurant Url's #####################################
+    
     path('list_restaurants', r_views.list_restaurants),
     path('get_restaurant', r_views.get_restaurant_by_id),
-    path('create_restaurant/', r_views.create_restaurant),
+    path('create_restaurant', r_views.create_restaurant),
     path('restaurant_image', r_views.ImageViewSet.as_view(), name='restaurant_image'),
     path('delete_restaurant', r_views.delete_restaurant_by_id, name='delete_restaurant'),
+    
+    ######################### Food Url's #####################################
+    
+    path('list_food', food_views.list_food),
+    path('get_food', food_views.get_food_by_id),
+    path('create_food', food_views.create_food),
+    path('delete_food', food_views.delete_food_by_id, name='delete_food'),
+    path('food_image', food_views.ImageViewSetFood.as_view(), name='food_image'),
 ]
