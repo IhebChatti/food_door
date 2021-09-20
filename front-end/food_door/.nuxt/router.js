@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _4dd52495 = () => interopDefault(import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */))
+const _640fe6d3 = () => interopDefault(import('../pages/food.vue' /* webpackChunkName: "pages/food" */))
 const _73b53a24 = () => interopDefault(import('../pages/Login.vue' /* webpackChunkName: "pages/Login" */))
 const _62cf152a = () => interopDefault(import('../pages/myAccountResturant.vue' /* webpackChunkName: "pages/myAccountResturant" */))
 const _5c66d194 = () => interopDefault(import('../pages/Sign Up_customer.vue' /* webpackChunkName: "pages/Sign Up_customer" */))
@@ -26,6 +27,10 @@ export const routerOptions = {
     path: "/cart",
     component: _4dd52495,
     name: "cart"
+  }, {
+    path: "/food",
+    component: _640fe6d3,
+    name: "food"
   }, {
     path: "/Login",
     component: _73b53a24,

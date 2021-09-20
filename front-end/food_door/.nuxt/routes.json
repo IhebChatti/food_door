@@ -7,6 +7,13 @@
     "_name": "_4dd52495"
   },
   {
+    "name": "food",
+    "path": "/food",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/food.vue",
+    "chunkName": "pages/food",
+    "_name": "_640fe6d3"
+  },
+  {
     "name": "Login",
     "path": "/Login",
     "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/Login.vue",

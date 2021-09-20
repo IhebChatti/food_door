@@ -8,5 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<CartItem>` | `<cart-item>` (components/CartItem.vue)
 - `<Hero>` | `<hero>` (components/Hero.vue)
+- `<ResturantCard>` | `<resturant-card>` (components/ResturantCard.vue)
 - `<SignupArea>` | `<signup-area>` (components/SignupArea.vue)
-- `<FoodCard>` | `<food-card>` (components/foodCard.vue)
+- `<FoodMenu>` | `<food-menu>` (components/foodMenu.vue)

@@ -34,6 +34,15 @@
         <SignupArea />
       </div>
     </section>
+    <section class="section is-large has-text-centered">
+      <h1 class="title">
+        Resturants around you
+      </h1>
+      <ResturantCard />
+    </section>
+    <section class="container">
+      <FoodMenu />
+    </section>
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -45,28 +54,29 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import FoodMenu from '../components/foodMenu.vue'
 import Hero from '../components/Hero.vue'
-import {mapActions, mapGetters} from "vuex";
 export default {
-  components: { Hero },
+  components: { Hero, FoodMenu },
   data () {
     return {
-      showMobileMenu: false,
+      showMobileMenu: false
     }
   },
   methods: {
     ...mapActions({
-      fetchRestaurants: 'restaurants/fetchRestaurants',
-    }),
+      fetchRestaurants: 'restaurants/fetchRestaurants'
+    })
   },
   computed: {
     ...mapGetters({
-      restaurants: 'restaurants/list',
+      restaurants: 'restaurants/list'
     })
   },
-  async mounted() {
-    await this.fetchRestaurants();
-  },
+  async mounted () {
+    await this.fetchRestaurants()
+  }
 }
 </script>
 
