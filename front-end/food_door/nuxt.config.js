@@ -43,7 +43,10 @@ export default {
     '@nuxtjs/axios'
   ],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // eslint-disable-next-line no-undef
+    baseURL: process.env.API_URL,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
