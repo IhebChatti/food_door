@@ -2,37 +2,50 @@ from django.shortcuts import render
 from users.models import User
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, action
 from users.serializers import UserSerializer
+# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
-@api_view(['POST', 'GET'])
+# class MyTokenObtainPairView(TokenObtainPairView):
+#     serializer_class = MyTokenObtainPairSerializer
+
+#     @action(detail=False, methods=['post'])
+#     def post(self, request, *args, **kwargs):
+#         breakpoint()
+#         token = super().post(request, *args, **kwargs)
+#         if token.data == {}:
+#             resp = 'invalid_credentials'
+#             return Response(resp, status=status.HTTP_400_BAD_REQUEST)
+#         elif 'error' in token.data:
+#             return Response(token.data, status=status.HTTP_400_BAD_REQUEST)
+#         else:
+#             return token
+
+
+######################### CREATE USERS #####################################
+
+@api_view(['POST'])
 @permission_classes([permissions.AllowAny, ])
 def create_user(request):
     try:
         user_data = request.data
         serialized = UserSerializer(data=user_data)
-        
         if serialized.is_valid():
-            user = User.objects.create(
-                email=serialized.data['email'],
-                password=serialized.data['password'],
-                first_name=serialized.data['first_name'],
-                last_name=serialized.data['last_name'],
-                address=serialized.data['address'],
-                phone=serialized.data['phone'],
-            )
-            user.save()
-            return Response({'message': 'created'}, status=status.HTTP_201_CREATED)
+            serialized.save()
+            return Response(serialized.data, status=status.HTTP_201_CREATED)
+            # return Response({'access': str(token.access_token), 'refresh': str(token), 'user': user_data}, status=status.HTTP_201_CREATED)
     except Exception as e:
-        return Response({'error': 'Internal server error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({'error': e}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 ######################### LIST USERS #####################################
 
 @api_view(['GET'])
-@permission_classes([permissions.AllowAny, ])
+@permission_classes([permissions.IsAuthenticatedOrReadOnly, ])
 def list_users(request):
     try:
         _users = User.objects.all()
