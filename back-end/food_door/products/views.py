@@ -86,7 +86,6 @@ def delete_food_by_id(request):
             return Response({'Fail': "food by this id does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
         food.delete()
-        food.save()
 
         return Response(
             {'Success': 'food deleted'},

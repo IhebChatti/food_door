@@ -85,7 +85,6 @@ def delete_user_by_id(request):
             return Response({'Fail': "User by this id does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
         user.delete()
-        user.save()
 
         return Response(
             {'Success': 'user deleted'},

@@ -18,6 +18,7 @@ from django.urls import path, include
 from users import views as  user_views
 from restaurant import views as r_views
 from products import views as food_views
+from orders import views as order_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -45,4 +46,11 @@ urlpatterns = [
     path('create_food', food_views.create_food),
     path('delete_food', food_views.delete_food_by_id, name='delete_food'),
     path('food_image', food_views.ImageViewSetFood.as_view(), name='food_image'),
+    
+    ######################### Food Url's #####################################
+    
+    path('list_orders', order_views.list_orders),
+    path('get_order', order_views.get_order_by_id),
+    path('create_order', order_views.create_order),
+    path('delete_order', order_views.delete_order_by_id, name='delete_food'),
 ]
