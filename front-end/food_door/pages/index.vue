@@ -46,13 +46,27 @@
 
 <script>
 import Hero from '../components/Hero.vue'
+import {mapActions, mapGetters} from "vuex";
 export default {
   components: { Hero },
   data () {
     return {
-      showMobileMenu: false
+      showMobileMenu: false,
     }
-  }
+  },
+  methods: {
+    ...mapActions({
+      fetchRestaurants: 'restaurants/fetchRestaurants',
+    }),
+  },
+  computed: {
+    ...mapGetters({
+      restaurants: 'restaurants/list',
+    })
+  },
+  async mounted() {
+    await this.fetchRestaurants();
+  },
 }
 </script>
 

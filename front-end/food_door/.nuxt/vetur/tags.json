@@ -1,0 +1,14 @@
+{
+  "CartItem": {
+    "description": "Auto imported from components/CartItem.vue"
+  },
+  "Hero": {
+    "description": "Auto imported from components/Hero.vue"
+  },
+  "SignupArea": {
+    "description": "Auto imported from components/SignupArea.vue"
+  },
+  "FoodCard": {
+    "description": "Auto imported from components/foodCard.vue"
+  }
+}
