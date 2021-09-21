@@ -5,15 +5,19 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: '@babel/eslint-parser',
+    parser: "@babel/eslint-parser",
     requireConfigFile: false
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: [
-  ],
+  extends: ["@nuxtjs", "plugin:nuxt/recommended"],
+  plugins: [],
   // add your custom rules here
-  rules: {}
-}
+  rules: {
+    quotes: ["error", "single"],
+    // we want to force semicolons
+    semi: ["error", "always"],
+    // we use 2 spaces to indent our code
+    indent: ["error", 2],
+    // we want to avoid extraneous spaces
+    "no-multi-spaces": ["error"]
+  }
+};

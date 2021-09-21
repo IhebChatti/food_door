@@ -7,6 +7,13 @@
     "_name": "_022406f6"
   },
   {
+    "name": "food",
+    "path": "/food",
+    "component": "/home/foued/food_door/front-end/food_door/pages/food.vue",
+    "chunkName": "pages/food",
+    "_name": "_185ec934"
+  },
+  {
     "name": "Login",
     "path": "/Login",
     "component": "/home/foued/food_door/front-end/food_door/pages/Login.vue",
