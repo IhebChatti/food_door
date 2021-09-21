@@ -17,6 +17,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('../store/auth.js'), 'auth.js')
   resolveStoreModules(require('../store/food.js'), 'food.js')
   resolveStoreModules(require('../store/restaurants.js'), 'restaurants.js')
 
@@ -25,6 +26,7 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '../store/auth.js',
       '../store/food.js',
       '../store/restaurants.js',
     ], () => {
