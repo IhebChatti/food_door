@@ -18,7 +18,7 @@
             Please fill this form
           </div>
         </div>
-        <form>
+        <form action="">
           <div class="field">
             <div class="control has-icons-left">
               <input class="input is-large" type="text" placeholder="Full name" autofocus="">

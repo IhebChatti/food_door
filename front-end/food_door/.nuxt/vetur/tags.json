@@ -5,10 +5,13 @@
   "Hero": {
     "description": "Auto imported from components/Hero.vue"
   },
+  "ResturantCard": {
+    "description": "Auto imported from components/ResturantCard.vue"
+  },
   "SignupArea": {
     "description": "Auto imported from components/SignupArea.vue"
   },
-  "FoodCard": {
-    "description": "Auto imported from components/foodCard.vue"
+  "FoodMenu": {
+    "description": "Auto imported from components/foodMenu.vue"
   }
 }
