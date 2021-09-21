@@ -13,9 +13,15 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+<<<<<<< HEAD
+import nuxt_plugin_plugin_29783fc8 from 'nuxt_plugin_plugin_29783fc8' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_32005532 from 'nuxt_plugin_axios_32005532' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_fontawesome_64d9faf4 from 'nuxt_plugin_fontawesome_64d9faf4' // Source: ./fontawesome.js (mode: 'all')
+=======
 import nuxt_plugin_plugin_7c36a345 from 'nuxt_plugin_plugin_7c36a345' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_axios_f430644a from 'nuxt_plugin_axios_f430644a' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_fontawesome_7176de46 from 'nuxt_plugin_fontawesome_7176de46' // Source: ./fontawesome.js (mode: 'all')
+>>>>>>> 1a3d21c557ebfc19f2db8cff2dae20e39278a32c
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -209,6 +215,18 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
+<<<<<<< HEAD
+  if (typeof nuxt_plugin_plugin_29783fc8 === 'function') {
+    await nuxt_plugin_plugin_29783fc8(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_axios_32005532 === 'function') {
+    await nuxt_plugin_axios_32005532(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_fontawesome_64d9faf4 === 'function') {
+    await nuxt_plugin_fontawesome_64d9faf4(app.context, inject)
+=======
   if (typeof nuxt_plugin_plugin_7c36a345 === 'function') {
     await nuxt_plugin_plugin_7c36a345(app.context, inject)
   }
@@ -219,6 +237,7 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_fontawesome_7176de46 === 'function') {
     await nuxt_plugin_fontawesome_7176de46(app.context, inject)
+>>>>>>> 1a3d21c557ebfc19f2db8cff2dae20e39278a32c
   }
 
   // Lock enablePreview in context
