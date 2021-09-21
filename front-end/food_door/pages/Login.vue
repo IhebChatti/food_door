@@ -49,14 +49,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   data () {
     return {
       email: '',
       password: ''
-    }
+    };
   },
   methods: {
     ...mapActions({
@@ -67,17 +67,17 @@ export default {
       const payload = {
         email: this.email,
         password: this.password
-      }
-      await this.login(payload)
-      this.$emit('login')
-      this.$router.push('/')
+      };
+      await this.login(payload);
+      this.$emit('login');
+      this.$router.push('/');
     },
 
     clickSignUp () {
-      this.$emit('signup')
+      this.$emit('signup');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

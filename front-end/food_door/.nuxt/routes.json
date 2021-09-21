@@ -14,13 +14,6 @@
     "_name": "_6c4641dd"
   },
   {
-    "name": "food",
-    "path": "/food",
-    "component": "/home/foued/food_door/front-end/food_door/pages/food.vue",
-    "chunkName": "pages/food",
-    "_name": "_185ec934"
-  },
-  {
     "name": "Login",
     "path": "/Login",
     "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Login.vue",
