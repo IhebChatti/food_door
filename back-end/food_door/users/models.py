@@ -1,9 +1,14 @@
 from django.contrib.auth.models import UserManager
 from django.db import models
 from django.core.validators import EmailValidator
+from django.db.models.enums import Choices
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser
 
+
+class UserType(models.IntegerChoices):  # noqa: WPS431
+    CLIENT = 1, 'client'
+    RESTAURANT = 2, 'restaurant'
 ############### User model ##############
 class User(AbstractBaseUser):
     first_name      = models.CharField(max_length=254, null=False)
@@ -14,6 +19,7 @@ class User(AbstractBaseUser):
     phone           = models.CharField(max_length=100, null=True)
     is_verified     = models.BooleanField(default=False, null=True)
     last_login      = models.DateTimeField(null=True)
+    user_types      = models.IntegerField(choices=UserType.choices, default=1)
 
     USERNAME_FIELD  = 'email'
     EMAIL_FIELD     = 'email'
