@@ -18,24 +18,24 @@
             <a class="navbar-item is-size-3" href="/Login">
               <button class="button is-dark is-large">Login</button>
             </a>
-              <div class="dropdown is-hoverable">
+            <div class="dropdown is-hoverable">
               <div class="dropdown-trigger">
-            <a class="navbar-item is-size-3" href="">
-               <button id="register_button" class="button is-dark is-large" aria-haspopup="true" aria-controls="dropdown-menu"> Register </button> 
-               </a>
+                <a class="navbar-item is-size-3" href="">
+                  <button id="register_button" class="button is-dark is-large" aria-haspopup="true" aria-controls="dropdown-menu"> Register </button>
+                </a>
               </div>
-              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-              <a href="Sign Up_resturant" class="dropdown-item">
-                      as Resturant
-                </a>
-                <hr class="dropdown-divider">
-                <a href="Sign Up_customer" class="dropdown-item">
-                      as Customer
-                </a>
+              <div id="dropdown-menu" class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="Sign Up_resturant" class="dropdown-item">
+                    as Resturant
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="Sign Up_customer" class="dropdown-item">
+                    as Customer
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
           </div>
         </div>
       </div>
