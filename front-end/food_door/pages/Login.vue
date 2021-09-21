@@ -18,10 +18,10 @@
             Please enter your email and password.
           </div>
         </div>
-        <form>
+        <form ref="observer-form">
           <div class="field">
             <div class="control has-icons-left">
-              <input class="input is-large" type="email" placeholder="Email" autofocus="">
+              <input v-model="email" class="input is-large" type="email" placeholder="Email" autofocus="">
               <span class="icon is-small is-left">
                 <fa icon="envelope" />
               </span>
@@ -29,7 +29,7 @@
           </div>
           <div class="field">
             <div class="control has-icons-left">
-              <input class="input is-large" type="password" placeholder="Password">
+              <input v-model="password" class="input is-large" type="password" placeholder="Password">
               <span class="icon is-small is-left">
                 <fa icon="lock" />
               </span>
@@ -40,7 +40,7 @@
           <input type="checkbox">
           Remember me
         </label>
-        <button class="button is-block is-primary is-large is-fullwidth">
+        <button class="button is-block is-primary is-large is-fullwidth" @click="submitLogin">
           Login
         </button>
       </div>
@@ -49,9 +49,33 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  setup () {
-    return {}
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    ...mapActions({
+      login: 'auth/login'
+    }),
+
+    async submitLogin () {
+      const payload = {
+        email: this.email,
+        password: this.password
+      }
+      await this.login(payload)
+      this.$emit('login')
+      this.$router.push('/')
+    },
+
+    clickSignUp () {
+      this.$emit('signup')
+    }
   }
 }
 </script>

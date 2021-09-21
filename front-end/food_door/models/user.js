@@ -1,4 +1,5 @@
 export default class User {
+<<<<<<< HEAD
   constructor(data = {}) {
     if (!data) {
       data = {};
@@ -35,5 +36,25 @@ export default class User {
      * @type {VarDate}
      */
     this.last_login = data.last_login ?? "";
+=======
+  constructor (data = {}) {
+    if (!data) { data = {} }
+    /**
+     * @type {string}
+     */
+    this.firstName = data.first_name ?? ''
+    /**
+     * @type {string}
+     */
+    this.lastName = data.last_name ?? ''
+    /**
+     * @type {string}
+     */
+    this.email = data.email ?? ''
+    /**
+     * @type {string}
+     */
+    this.address = data.address ?? ''
+>>>>>>> 1a3d21c557ebfc19f2db8cff2dae20e39278a32c
   }
 }
