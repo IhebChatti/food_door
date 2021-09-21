@@ -1,17 +1,18 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable no-unused-vars */
-import Restaurant from '@/models/restaurant';
-import Vue from "vue";
-const localVue = new Vue();
+import Vue from 'vue'
+import Restaurant from '@/models/restaurant'
+const localVue = new Vue()
 
 const CONTEXT = {
   INDEX: {
-    URL: 'list_restaurants',
-  },
+    URL: 'list_restaurants'
+  }
 }
 
-Object.freeze(CONTEXT);
+Object.freeze(CONTEXT)
 
-//=========================================================STATE========================================================
+//= ========================================================STATE========================================================
 export const state = () => ({
   /**
    * @type {Restaurant}
@@ -20,19 +21,17 @@ export const state = () => ({
   /**
    * @type {Array<Restaurant>}
    */
-  restaurants: [],
-});
+  restaurants: []
+})
 
-//=======================================================MUTATIONS======================================================
+//= ======================================================MUTATIONS======================================================
 
 export const mutations = {
   SET_INDEX: (state, payload) => state.restaurants = payload.map(restaurant => new Restaurant(restaurant)),
-  SET_SHOW: (state, payload) => state.restaurant = new Restaurant(payload),
-};
+  SET_SHOW: (state, payload) => state.restaurant = new Restaurant(payload)
+}
 
-
-
-//========================================================ACTIONS=======================================================
+//= =======================================================ACTIONS=======================================================
 
 export const actions = {
   async fetchRestaurants ({ commit }) {
@@ -40,9 +39,9 @@ export const actions = {
     commit('SET_INDEX', payload)
   }
 }
-//=======================================================GETTERS========================================================
+//= ======================================================GETTERS========================================================
 
 export const getters = {
-  list: (state) => state.restaurants,
-  show: (state) => state.restaurant,
+  list: state => state.restaurants,
+  show: state => state.restaurant
 }

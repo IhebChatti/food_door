@@ -24,8 +24,16 @@ export const routerOptions = {
 
   routes: [{
     path: "/cart",
+<<<<<<< HEAD
     component: _022406f6,
+=======
+    component: _4dd52495,
+>>>>>>> d9c84c9e37fed06dc402403872838202ca3ac00b
     name: "cart"
+  }, {
+    path: "/food",
+    component: _640fe6d3,
+    name: "food"
   }, {
     path: "/Login",
     component: _4942a3e3,
