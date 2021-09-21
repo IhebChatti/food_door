@@ -46,7 +46,7 @@ sudo pip install djangorestframework
 sudo pip install djangorestframework-simplejwt
 ```
 
-For the frontend packages.
+For the front-end packages:
 
 ```bash
 yarn install
@@ -67,7 +67,3 @@ python3 manage.py runserver
 
 Which run the backend environment on port 8000
 To get the same landing on page in this repository put `localhost:3000` on your browser
-
-```
-
-```
