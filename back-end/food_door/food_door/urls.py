@@ -60,7 +60,7 @@ urlpatterns = [
     path('delete_order', order_views.delete_order_by_id, name='delete_food'),
     ############################ AUTH ######################################
     # re_path(r'jwt/obtain/$', user_views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/', user_views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     

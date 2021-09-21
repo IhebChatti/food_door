@@ -3,11 +3,16 @@ from users.models import User
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes, action
-from users.serializers import UserSerializer
-# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from users.serializers import UserSerializer, MyTokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+@permission_classes([permissions.AllowAny, ])
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 
 # class MyTokenObtainPairView(TokenObtainPairView):

@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from users.config import logger as ulm
 import pytz
 from django.contrib.auth.hashers import make_password
-
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -26,6 +26,15 @@ class UserSerializer(serializers.ModelSerializer):
         """
         return make_password(value)
 
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        refresh = self.get_token(self.user)
+        data['refresh'] = str(refresh)
+        data['access'] = str(refresh.access_token)
+
+        data['user_types'] = self.user.user_types
+        return data
 
 
 # class MyTokenObtainPairSerializer(TokenObtainPairSerializer):

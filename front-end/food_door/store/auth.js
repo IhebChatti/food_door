@@ -23,9 +23,11 @@ export const state = () => ({
 //= ======================================================MUTATIONS======================================================
 
 export const mutations = {
-  SET_TOKENS: (state, { access, refresh }) => {
+  // eslint-disable-next-line camelcase
+  SET_TOKENS: (state, { access, refresh, user_types }) => {
     window.localStorage.setItem('access_token', access);
     window.localStorage.setItem('refresh_token', refresh);
+    window.localStorage.setItem('user_types', user_types);
   }
 };
 
@@ -35,6 +37,10 @@ export const actions = {
   async login ({ commit, dispatch }, payload) {
     const result = await this.$axios.$post('http://127.0.0.1:8000/api/token/', payload);
     commit('SET_TOKENS', result);
+  },
+
+  async signup ({ commit, dispatch }, payload) {
+    await this.$axios.$post('http://127.0.0.1:8000/signup/', payload);
   }
 };
 //= ======================================================GETTERS========================================================
