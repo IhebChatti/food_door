@@ -2,43 +2,43 @@
   {
     "name": "cart",
     "path": "/cart",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/cart.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/cart.vue",
     "chunkName": "pages/cart",
-    "_name": "_560b7f9f"
+    "_name": "_022406f6"
   },
   {
     "name": "Login",
     "path": "/Login",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Login.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/Login.vue",
     "chunkName": "pages/Login",
-    "_name": "_724a405a"
+    "_name": "_4942a3e3"
   },
   {
     "name": "myAccountResturant",
     "path": "/myAccountResturant",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/myAccountResturant.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/myAccountResturant.vue",
     "chunkName": "pages/myAccountResturant",
-    "_name": "_55dc56b4"
+    "_name": "_368db9cb"
   },
   {
     "name": "Sign Up_customer",
     "path": "/Sign%20Up_customer",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Sign Up_customer.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/Sign Up_customer.vue",
     "chunkName": "pages/Sign Up_customer",
-    "_name": "_afea24c4"
+    "_name": "_17182a75"
   },
   {
     "name": "Sign Up_resturant",
     "path": "/Sign%20Up_resturant",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Sign Up_resturant.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/Sign Up_resturant.vue",
     "chunkName": "pages/Sign Up_resturant",
-    "_name": "_fb989574"
+    "_name": "_1663d962"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/index.vue",
+    "component": "/home/foued/food_door/front-end/food_door/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_31307d63"
+    "_name": "_0828e0ec"
   }
 ]
