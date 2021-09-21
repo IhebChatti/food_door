@@ -3,16 +3,16 @@ from restaurant.models import FoodItem, Restaurant, RestaurantImage, FoodImage
 from django.core import exceptions
 import django.contrib.auth.password_validation as validators
 
-class RestaurantSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Restaurant
-        fields = ('id', 'name', 'description', 'phone', 'address')
-
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = RestaurantImage
-        fields = ('id', 'name', 'image')
+        fields = '__all__'
 
+class RestaurantSerializer(serializers.ModelSerializer):
+    images = ImageSerializer(many=True)
+    class Meta:
+        model = Restaurant
+        fields = ('id', 'name', 'description', 'phone', 'address', 'images')
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem

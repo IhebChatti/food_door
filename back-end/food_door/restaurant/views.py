@@ -85,7 +85,7 @@ class ImageViewSet(ListAPIView):
         file = request.data['file']
         name = restaurant.name
         image_instance = RestaurantImage.objects.create(name=name, image=file, restaurant=restaurant)
-        return HttpResponse(json.dumps({'message': "Uploaded"}), status=200)
+        return HttpResponse(json.dumps({'message': "Saved"}), status=200)
 
     def get(self, request):
         try:

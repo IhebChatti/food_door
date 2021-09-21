@@ -4,7 +4,7 @@
     <nav class="navbar is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
-          <a href="#" class="navbar-item is-size-1">
+          <a href="/" class="navbar-item is-size-1">
             Food Door
           </a>
           <span class="navbar-burger" data-target="navbarMenuHeroA" @click="showMobileMenu = !showMobileMenu">
@@ -38,7 +38,11 @@
       <h1 class="title">
         Resturants around you
       </h1>
-      <ResturantCard />
+      <div v-if="restaurants.length > 0">
+        <div v-for="restau in restaurants" :key="restau.id">
+          <ResturantCard :restaurant="restau" />
+        </div>
+      </div>
     </section>
     <section class="container">
       <FoodMenu />
@@ -54,30 +58,31 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-import FoodMenu from '../components/foodMenu.vue'
-import Hero from '../components/Hero.vue'
+import { mapActions, mapGetters } from 'vuex';
+import FoodMenu from '../components/foodMenu.vue';
+import Hero from '../components/Hero.vue';
 export default {
   components: { Hero, FoodMenu },
   data () {
     return {
       showMobileMenu: false
-    }
-  },
-  methods: {
-    ...mapActions({
-      fetchRestaurants: 'restaurants/fetchRestaurants'
-    })
+    };
   },
   computed: {
     ...mapGetters({
       restaurants: 'restaurants/list'
     })
   },
+
   async mounted () {
-    await this.fetchRestaurants()
+    await this.fetchRestaurants();
+  },
+  methods: {
+    ...mapActions({
+      fetchRestaurants: 'restaurants/fetchRestaurants'
+    })
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

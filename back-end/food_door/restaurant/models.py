@@ -16,11 +16,11 @@ class Restaurant(models.Model):
         verbose_name_plural = 'restaurants'
 
 def nameFile(instance, filename):
-    return '/'.join(['images', str(instance.name), filename])
+    return '/'.join(['media', str(instance.name), filename])
 
 class RestaurantImage(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to=nameFile, blank=True, null=True)
+    image = models.TextField(null=True)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="images")
     
     class Meta(object):

@@ -17,5 +17,9 @@ export default class Restaurant {
      * @type {string}
      */
     this.description = data.description ?? '';
+    /**
+     * @type {Array}
+     */
+    this.images = data.images ?? [];
   }
 }

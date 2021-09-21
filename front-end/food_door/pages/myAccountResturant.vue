@@ -4,7 +4,7 @@
       <nav class="navbar">
         <div class="container">
           <div class="navbar-brand">
-            <a href="index" class="navbar-item is-size-1">
+            <a href="/" class="navbar-item is-size-1">
               Food Door
             </a>
             <span class="navbar-burger" data-target="navbarMenuHeroA" @click="showMobileMenu = !showMobileMenu">
@@ -104,9 +104,9 @@ export default {
   data () {
     return {
       showMobileMenu: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
