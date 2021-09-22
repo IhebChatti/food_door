@@ -1,51 +1,44 @@
 [
   {
-    "name": "cart",
-    "path": "/cart",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/cart.vue",
-    "chunkName": "pages/cart",
-    "_name": "_560b7f9f"
-  },
-  {
     "name": "food",
     "path": "/food",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/food.vue",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/food.vue",
     "chunkName": "pages/food",
-    "_name": "_6c4641dd"
+    "_name": "_640fe6d3"
   },
   {
     "name": "Login",
     "path": "/Login",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Login.vue",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/Login.vue",
     "chunkName": "pages/Login",
-    "_name": "_724a405a"
+    "_name": "_73b53a24"
   },
   {
     "name": "myAccountResturant",
     "path": "/myAccountResturant",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/myAccountResturant.vue",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/myAccountResturant.vue",
     "chunkName": "pages/myAccountResturant",
-    "_name": "_55dc56b4"
+    "_name": "_62cf152a"
+  },
+  {
+    "name": "orderfood",
+    "path": "/orderfood",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/orderfood.vue",
+    "chunkName": "pages/orderfood",
+    "_name": "_7581f487"
   },
   {
     "name": "Sign Up_customer",
     "path": "/Sign%20Up_customer",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Sign Up_customer.vue",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/Sign Up_customer.vue",
     "chunkName": "pages/Sign Up_customer",
-    "_name": "_afea24c4"
-  },
-  {
-    "name": "Sign Up_resturant",
-    "path": "/Sign%20Up_resturant",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/Sign Up_resturant.vue",
-    "chunkName": "pages/Sign Up_resturant",
-    "_name": "_fb989574"
+    "_name": "_5c66d194"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/lothric/Desktop/food_door/front-end/food_door/pages/index.vue",
+    "component": "/home/apodeath/Desktop/FOOD/food_door/front-end/food_door/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_31307d63"
+    "_name": "_329b772d"
   }
 ]

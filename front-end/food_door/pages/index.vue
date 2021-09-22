@@ -13,28 +13,42 @@
             <span />
           </span>
         </div>
-        <div id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
+        <div v-show="userType == -1" id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
           <div class="navbar-end">
             <a class="navbar-item is-size-3" href="/Login">
               <button class="button is-dark is-large">Login</button>
             </a>
+            <a class="navbar-item is-size-3" href="Sign Up_customer">
+              <button class="button is-dark is-large">Register</button>
+            </a>
+          </div>
+        </div>
+        <div v-show="userType == 2" id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
+          <div class="navbar-end">
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <button class="button is-dark is-large account_m" aria-haspopup="true" aria-controls="dropdown-menu3">
+                  My account
+                </button>
+              </div>
+              <div id="dropdown-menu3" class="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a href="myAccountResturant" class="dropdown-item">
+                    Dashboard
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" @click="logout">
+                    Logout
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </nav>
     <Hero />
-    <section class="section is-large has-text-centered">
-      <h1 class="title is-size-1">
-        Sign up as
-      </h1>
-      <br>
-      <br>
-      <br>
-      <div class="container">
-        <SignupArea />
-      </div>
-    </section>
-    <section class="section is-large has-text-centered">
+    <section v-show="userType == 2" class="section is-large has-text-centered">
       <h1 class="title">
         Resturants around you
       </h1>
@@ -43,9 +57,6 @@
           <ResturantCard :restaurant="restau" />
         </div>
       </div>
-    </section>
-    <section class="container">
-      <FoodMenu />
     </section>
     <footer class="footer">
       <div class="content has-text-centered">
@@ -59,10 +70,9 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import FoodMenu from '../components/foodMenu.vue';
 import Hero from '../components/Hero.vue';
 export default {
-  components: { Hero, FoodMenu },
+  components: { Hero },
   data () {
     return {
       showMobileMenu: false,
@@ -77,15 +87,20 @@ export default {
 
   async mounted () {
     await this.fetchRestaurants();
-    if (window.localStorage.user_types === 1) {
+    if (window.localStorage.user_types === '1') {
       this.userType = 1;
-    } else {
+    } else if (window.localStorage.user_types === '2') {
       this.userType = 2;
+    } else {
+      this.userType = -1;
     }
+    // eslint-disable-next-line no-console
+    console.log(this.userType);
   },
   methods: {
     ...mapActions({
-      fetchRestaurants: 'restaurants/fetchRestaurants'
+      fetchRestaurants: 'restaurants/fetchRestaurants',
+      logout: 'auth/logout'
     })
   }
 };
@@ -94,6 +109,9 @@ export default {
 <style lang="scss" scoped>
 @import '../node_modules/bulma';
 #register_button{
+  margin-top: 6px;
+}
+.account_m{
   margin-top: 6px;
 }
 </style>

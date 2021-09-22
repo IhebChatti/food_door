@@ -41,6 +41,13 @@ export const actions = {
 
   async signup ({ commit, dispatch }, payload) {
     await this.$axios.$post('http://127.0.0.1:8000/signup/', payload);
+  },
+
+  logout ({ commit, dispatch }, payload) {
+    window.localStorage.clear();
+    window.sessionStorage.clear();
+    this.$axios.setToken(false);
+    this.$router.push('/');
   }
 };
 //= ======================================================GETTERS========================================================

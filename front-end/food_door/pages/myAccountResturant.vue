@@ -13,24 +13,21 @@
               <span />
             </span>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
+          <div v-show="userType == 2" id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
             <div class="navbar-end">
-              <div class="dropdown">
+              <div class="dropdown is-hoverable">
                 <div class="dropdown-trigger">
-                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                    <span> My account</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-angle-down" aria-hidden="true" />
-                    </span>
+                  <button class="button is-dark is-large account_m" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    My account
                   </button>
                 </div>
                 <div id="dropdown-menu3" class="dropdown-menu" role="menu">
                   <div class="dropdown-content">
-                    <a href="#" class="dropdown-item">
+                    <a href="myAccountResturant" class="dropdown-item is-large is-dark">
                       Dashboard
                     </a>
                     <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">
+                    <a class="dropdown-item is-large is-dark" @click="logout">
                       Logout
                     </a>
                   </div>
@@ -100,15 +97,37 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   data () {
     return {
-      showMobileMenu: false
+      showMobileMenu: false,
+      userType: -1
     };
+  },
+  mounted () {
+    if (window.localStorage.user_types === '1') {
+      this.userType = 1;
+    } else if (window.localStorage.user_types === '2') {
+      this.userType = 2;
+    } else {
+      this.userType = -1;
+    }
+    // eslint-disable-next-line no-console
+    console.log(this.userType);
+  },
+  methods: {
+    ...mapActions({
+      logout: 'auth/logout'
+    })
   }
 };
 </script>
 
 <style lang="scss" scoped>
+@import '../node_modules/bulma';
 
+.account_m{
+  margin-top: 6px;
+}
 </style>

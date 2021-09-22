@@ -47,9 +47,14 @@
 <script>
 export default {
 
-}
+};
 </script>
 
 <style lang="scss" scoped>
 @import '../node_modules/bulma';
+.container{
+  width: 50%;
+  height: 50%;
+  margin-top: 5%;
+}
 </style>

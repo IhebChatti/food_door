@@ -54,8 +54,8 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faEnvelope', 'faLock', 'faUsers', 'faPhone'],
+      solid: ['faEnvelope', 'faLock', 'faUsers', 'faPhone', 'faAddressBook'],
       brands: []
     }
   }
-}
+};

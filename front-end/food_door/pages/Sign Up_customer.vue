@@ -55,7 +55,7 @@
             <div class="control has-icons-left">
               <input v-model="address" class="input is-large" type="numbers" placeholder="address" autofocus="">
               <span class="icon is-small is-left">
-                <fa icon="address" />
+                <fa icon="address-book" />
               </span>
             </div>
           </div>

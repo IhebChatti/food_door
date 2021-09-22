@@ -10,14 +10,16 @@ import {
   faEnvelope as freeFasFaEnvelope,
   faLock as freeFasFaLock,
   faUsers as freeFasFaUsers,
-  faPhone as freeFasFaPhone
+  faPhone as freeFasFaPhone,
+  faAddressBook as freeFasFaAddressBook
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   freeFasFaEnvelope,
   freeFasFaLock,
   freeFasFaUsers,
-  freeFasFaPhone
+  freeFasFaPhone,
+  freeFasFaAddressBook
 )
 
 config.autoAddCss = false

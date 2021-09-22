@@ -8,9 +8,6 @@
   "ResturantCard": {
     "description": "Auto imported from components/ResturantCard.vue"
   },
-  "SignupArea": {
-    "description": "Auto imported from components/SignupArea.vue"
-  },
   "FoodMenu": {
     "description": "Auto imported from components/foodMenu.vue"
   }
