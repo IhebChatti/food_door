@@ -41,4 +41,20 @@ export default {
 
 <style lang="scss" scoped>
 @import '../node_modules/bulma';
+.card {
+  left: 50%;
+}
+</style>
+
+<style scoped>
+@media screen and (max-width: 598px) {
+  .card {
+    left: 2%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    left: 2%;
+  }
+}
 </style>

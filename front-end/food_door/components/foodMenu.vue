@@ -46,6 +46,13 @@
 
 <script>
 export default {
+  props: {
+    foodItem: {
+      type: Object,
+      // eslint-disable-next-line vue/require-valid-default-prop
+      default: {}
+    }
+  }
 
 };
 </script>

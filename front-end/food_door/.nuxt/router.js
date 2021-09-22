@@ -4,12 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _640fe6d3 = () => interopDefault(import('../pages/food.vue' /* webpackChunkName: "pages/food" */))
-const _73b53a24 = () => interopDefault(import('../pages/Login.vue' /* webpackChunkName: "pages/Login" */))
-const _62cf152a = () => interopDefault(import('../pages/myAccountResturant.vue' /* webpackChunkName: "pages/myAccountResturant" */))
-const _7581f487 = () => interopDefault(import('../pages/orderfood.vue' /* webpackChunkName: "pages/orderfood" */))
-const _5c66d194 = () => interopDefault(import('../pages/Sign Up_customer.vue' /* webpackChunkName: "pages/Sign Up_customer" */))
-const _329b772d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _6c4641dd = () => interopDefault(import('../pages/food.vue' /* webpackChunkName: "pages/food" */))
+const _724a405a = () => interopDefault(import('../pages/Login.vue' /* webpackChunkName: "pages/Login" */))
+const _55dc56b4 = () => interopDefault(import('../pages/myAccountResturant.vue' /* webpackChunkName: "pages/myAccountResturant" */))
+const _791cefbd = () => interopDefault(import('../pages/orderfood.vue' /* webpackChunkName: "pages/orderfood" */))
+const _16ab6d02 = () => interopDefault(import('../pages/restaurant/index.vue' /* webpackChunkName: "pages/restaurant/index" */))
+const _afea24c4 = () => interopDefault(import('../pages/Sign Up_customer.vue' /* webpackChunkName: "pages/Sign Up_customer" */))
+const _54ea9fa7 = () => interopDefault(import('../pages/restaurant/_id.vue' /* webpackChunkName: "pages/restaurant/_id" */))
+const _31307d63 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +26,35 @@ export const routerOptions = {
 
   routes: [{
     path: "/food",
-    component: _640fe6d3,
+    component: _6c4641dd,
     name: "food"
   }, {
     path: "/Login",
-    component: _73b53a24,
+    component: _724a405a,
     name: "Login"
   }, {
     path: "/myAccountResturant",
-    component: _62cf152a,
+    component: _55dc56b4,
     name: "myAccountResturant"
   }, {
     path: "/orderfood",
-    component: _7581f487,
+    component: _791cefbd,
     name: "orderfood"
   }, {
+    path: "/restaurant",
+    component: _16ab6d02,
+    name: "restaurant"
+  }, {
     path: "/Sign%20Up_customer",
-    component: _5c66d194,
+    component: _afea24c4,
     name: "Sign Up_customer"
   }, {
+    path: "/restaurant/:id",
+    component: _54ea9fa7,
+    name: "restaurant-id"
+  }, {
     path: "/",
-    component: _329b772d,
+    component: _31307d63,
     name: "index"
   }],
 

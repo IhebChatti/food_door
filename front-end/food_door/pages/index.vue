@@ -23,7 +23,7 @@
             </a>
           </div>
         </div>
-        <div v-show="userType == 2" id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
+        <div v-show="userType == 2 || userType == 1" id="navbarMenuHeroA" class="navbar-menu" :class="{'is-active': showMobileMenu}">
           <div class="navbar-end">
             <div class="dropdown is-hoverable">
               <div class="dropdown-trigger">
@@ -48,7 +48,7 @@
       </div>
     </nav>
     <Hero />
-    <section v-show="userType == 2" class="section is-large has-text-centered">
+    <section v-show="userType == 2 || userType == 1" class="section is-large has-text-centered">
       <h1 class="title">
         Resturants around you
       </h1>
@@ -94,8 +94,6 @@ export default {
     } else {
       this.userType = -1;
     }
-    // eslint-disable-next-line no-console
-    console.log(this.userType);
   },
   methods: {
     ...mapActions({

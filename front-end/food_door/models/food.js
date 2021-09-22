@@ -1,6 +1,6 @@
 export default class FoodItem {
-  constructor(data = {}) {
-    if (!data) data = {};
+  constructor (data = {}) {
+    if (!data) { data = {}; }
     /**
      * @type {string}
      */

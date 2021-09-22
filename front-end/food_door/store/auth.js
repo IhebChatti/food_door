@@ -47,7 +47,7 @@ export const actions = {
     window.localStorage.clear();
     window.sessionStorage.clear();
     this.$axios.setToken(false);
-    this.$router.push('/');
+    this.$router.go();
   }
 };
 //= ======================================================GETTERS========================================================

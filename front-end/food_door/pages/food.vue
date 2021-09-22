@@ -24,19 +24,34 @@
       </nav>
     </div>
     <section class="food-listing">
-      <FoodMenu />
+      <FoodMenu :foodItem="foods" />
     </section>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 import foodMenu from '../components/foodMenu.vue';
+
 export default {
   components: { foodMenu },
   data () {
     return {
       showMobileMenu: false
     };
+  },
+  computed: {
+    ...mapGetters({ food: 'food/show' })
+  },
+
+  async mounted () {
+    await this.fetchfood(1);
+    // eslint-disable-next-line no-console
+    console.log(this.food);
+  },
+
+  methods: {
+    ...mapActions({ fetchfood: 'food/fetchFood' })
   }
 };
 </script>
