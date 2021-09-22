@@ -34,9 +34,9 @@ def list_food(request):
 @permission_classes([permissions.AllowAny, ])
 def get_food_by_id(request):
     try:
-        food_id = request.GET.get('food_id')
+        restaurant_id = request.GET.get('restaurant_id')
         try:
-            food = FoodItem.objects.get(id=food_id)
+            food = FoodItem.objects.get(restaurant=restaurant_id)
         except:
             return Response({'Error', 'No food found'}, status=status.HTTP_404_NOT_FOUND)
         serializer = FoodSerializer(food)
@@ -59,13 +59,16 @@ def get_food_by_id(request):
 @permission_classes([permissions.AllowAny, ])
 def create_food(request):
     try:
+        restaurant_id = request.data['restaurant']
         food_data = request.data
         serialized = FoodSerializer(data=food_data)
+        restaurant = Restaurant.objects.get(id=restaurant_id)
         if serialized.is_valid():
             food = FoodItem.objects.create(
                 name=serialized.data['name'],
                 description=serialized.data['description'],
                 price=serialized.data['price'],
+                restaurant=restaurant
             )
             food.save()
             return Response(str('message: created'), status=status.HTTP_201_CREATED)

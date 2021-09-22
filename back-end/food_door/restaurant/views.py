@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes
-from restaurant.serializers import RestaurantSerializer, ImageSerializer
+from restaurant.serializers import RestaurantSerializer, ImageSerializer, CreateRestaurantSerializer
 from rest_framework import status
 from rest_framework.generics import ListAPIView
 import json
@@ -21,9 +21,9 @@ def list_restaurants(request):
             serializer.data,
             status=status.HTTP_200_OK
         )
-    except Exception:
+    except Exception as e:
         return Response(
-            {'error': 'no retaurants'},
+            {'error': e},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
@@ -59,7 +59,7 @@ def get_restaurant_by_id(request):
 def create_restaurant(request):
     try:
         restaurant_data = request.data
-        serialized = RestaurantSerializer(data=restaurant_data)
+        serialized = CreateRestaurantSerializer(data=restaurant_data)
         if serialized.is_valid():
             restaurant = Restaurant.objects.create(
                 name=serialized.data['name'],

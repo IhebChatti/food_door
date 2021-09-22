@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.files.storage import FileSystemStorage
+from django.db.models.fields import related
 
 fs = FileSystemStorage(location='/media/photos')
 
@@ -31,8 +32,9 @@ class RestaurantImage(models.Model):
 
 class FoodItem(models.Model):
     name = models.CharField(max_length=30)
-    description = models.CharField(max_length=100)
+    description = models.TextField()
     price = models.FloatField(max_length=100)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="restaurant")
 
     class Meta(object):
         db_table = 'food_item'

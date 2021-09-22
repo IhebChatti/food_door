@@ -8,15 +8,23 @@ class ImageSerializer(serializers.ModelSerializer):
         model = RestaurantImage
         fields = '__all__'
 
+class CreateRestaurantSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Restaurant
+        fields = ('id', 'name', 'description', 'phone', 'address')
+
+
 class RestaurantSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
+    
     class Meta:
         model = Restaurant
         fields = ('id', 'name', 'description', 'phone', 'address', 'images')
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem
-        fields = ('id', 'name', 'description', 'price')
+        fields = '__all__'
 
 class FoodImageSerializer(serializers.ModelSerializer):
     class Meta:
